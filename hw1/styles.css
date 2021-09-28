@@ -1,0 +1,30 @@
+.inner {
+  background-color: #ffffff;
+  height: 300px; /* ★ */
+  line-height: 600px; /* ★ */
+}
+
+.lowSidebar {
+  clear: both;
+  background-color: #ffffff;
+  height: 100px;
+  line-height: 100px;
+}
+
+.sidebar_left {
+  background-color: #ffecc9;
+  width: 120px;
+  height: 400px;
+  text-align: center;
+  line-height: 400px;
+  float: left;
+}
+
+#sidebar_right {
+  background-color: #ffecc9;
+  width: 120px;
+  height: 400px;
+  text-align: center;
+  line-height: 400px;
+  float: right;
+}
