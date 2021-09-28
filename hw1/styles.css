@@ -22,16 +22,21 @@ body {
   .main_picture {
     margin-top: 14vh;
     margin: auto;
-    width: 50%;
+    width: 70%;
   }
 }
-@media (min-width: 500px) {
+@media (min-width: 10000px) {
   .main_picture {
     margin-top: 14vh;
     margin: auto;
     width: 50%;
-    size: 50%;
-    transition: 1s;
+  }
+}
+@media (min-width: 200px) {
+  .main_picture {
+    margin-top: 14vh;
+    margin: auto;
+    width: 50%;
   }
 }
 .head_align {
