@@ -1,0 +1,108 @@
+body {
+  background: white;
+}
+
+.head_align {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.image-viewer__button img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.image-viewer__display {
+  position: relative;
+  padding: 15px;
+  margin: 3rem;
+  max-width: 80rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.6rem;
+}
+
+.image-viewer__display img {
+  height: 600px;
+}
+.image-viewer__button img:hover {
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.image-viewer__button:focus {
+  outline: none;
+}
+
+.disabled {
+  opacity: 0.2;
+}
+
+.disabled:hover {
+  border-color: transparent !important;
+  cursor: not-allowed;
+}
+
+.image-viewer__container {
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.sidebar {
+  text-align: center;
+  height: 750px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+.sidebar p {
+  font-size: 30px;
+}
+
+.preview_bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  overflow-x: auto;
+}
+.preview_bar img {
+  height: 200px;
+}
+
+.preview_bar img:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+div p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.main_page {
+  margin-left: 200px;
+}
+
+.focused {
+  border-style: dotted;
+  border-width: 4px;
+}
+
+.bordered {
+  border: 4px dotted;
+}

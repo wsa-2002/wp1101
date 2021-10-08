@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Photo Album</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+  </head>
+  <body>
+    <div class="head_align">
+      <div class="sidebar">
+        <h1>MY ALBUMS</h1>
+        <p onclick="set_album(0)" id="album1">十年</p>
+        <p onclick="set_album(1)" id="album2">知足</p>
+        <p onclick="set_album(2)" id="album3">遇見</p>
+        <p onclick="empty_album()" id="album4">album4</p>
+      </div>
+      <div class="main_page">
+        <div class="image-viewer__container">
+          <div class="image-viewer__button" onclick="prevImg()">
+            <img src="https://i.imgur.com/VnOFba6.png" id="previous" />
+          </div>
+          <div class="image-viewer__display">
+            <img src="" id="main_pic" />
+          </div>
+          <div class="image-viewer__button" onclick="nextImg()">
+            <img src="https://i.imgur.com/X518J7A.png?1" id="next" />
+          </div>
+        </div>
+        <div class="preview_bar" id="prev_bar"></div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
