@@ -1,54 +1,108 @@
 body {
   background: white;
 }
-.sidebar {
-  width: 25vw;
-  height: 94vh;
-  overflow: auto;
-}
 
-.sidebar_view {
-  background: white;
-  width: 100%;
-  padding: 3px;
-  opacity: 1;
-}
-
-.sidebar_view:hover {
-  opacity: 0.5;
-  transform: scale(1);
-}
-@media (min-width: 1163px) {
-  .main_picture {
-    margin-top: 14vh;
-    margin: auto;
-    width: 70%;
-  }
-}
-@media (min-width: 10000px) {
-  .main_picture {
-    margin-top: 14vh;
-    margin: auto;
-    width: 50%;
-  }
-}
-@media (min-width: 200px) {
-  .main_picture {
-    margin-top: 14vh;
-    margin: auto;
-    width: 50%;
-  }
-}
 .head_align {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 }
 
-.selection_bar {
-  margin: auto;
+.image-viewer__button img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.row_align {
-  align-items: flex-start;
+.image-viewer__display {
+  position: relative;
+  padding: 15px;
+  margin: 3rem;
+  max-width: 80rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.6rem;
+}
+
+.image-viewer__display img {
+  height: 600px;
+}
+.image-viewer__button img:hover {
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.image-viewer__button:focus {
+  outline: none;
+}
+
+.disabled {
+  opacity: 0.2;
+}
+
+.disabled:hover {
+  border-color: transparent !important;
+  cursor: not-allowed;
+}
+
+.image-viewer__container {
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.sidebar {
+  text-align: center;
+  height: 750px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+.sidebar p {
+  font-size: 30px;
+}
+
+.preview_bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  overflow-x: auto;
+}
+.preview_bar img {
+  height: 200px;
+}
+
+.preview_bar img:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+div p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.main_page {
+  margin-left: 200px;
+}
+
+.focused {
+  border-style: dotted;
+  border-width: 4px;
+}
+
+.bordered {
+  border: 4px dotted;
 }

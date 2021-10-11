@@ -1,49 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Digital Photo Album</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
   </head>
-
   <body>
     <div class="head_align">
-      <div class="row_align">
-        <div class="selection_bar">
-          <select size>
-            <option>十年</option>
-            <option>Album2</option>
-            <option>Album3</option>
-            <option>Album4</option>
-          </select>
-        </div>
-        <div class="sidebar">
-          <img
-            src="image/image1.jpg"
-            alt="this is a picture"
-            class="sidebar_view"
-          />
-          <img
-            src="image/image2.jpg"
-            alt="this is a picture"
-            class="sidebar_view"
-          />
-          <img
-            src="image/image3.jpg"
-            alt="this is a picture"
-            class="sidebar_view"
-          />
-          <img
-            src="image/image4.jpg"
-            alt="this is a picture"
-            class="sidebar_view"
-          />
-        </div>
+      <div class="sidebar">
+        <h1>MY ALBUMS</h1>
+        <p id="album1">十年</p>
+        <p id="album2">知足</p>
+        <p id="album3">遇見</p>
+        <p id="album4">album4</p>
       </div>
-      <div class="main_picture">
-        <img src="image/image1.jpg" alt="厲害了" style="width: 70%" />
+      <div class="main_page">
+        <div class="image-viewer__container">
+          <div class="image-viewer__button">
+            <img src="https://i.imgur.com/VnOFba6.png" id="previous" />
+          </div>
+          <div class="image-viewer__display">
+            <img src="image/image1.jpg" id="main_pic" />
+          </div>
+          <div class="image-viewer__button">
+            <img src="https://i.imgur.com/X518J7A.png?1" id="next" />
+          </div>
+        </div>
+        <div class="preview_bar" id="prev_bar">
+          <img src="image/image1.jpg" />
+          <img src="image/image2.jpg" />
+          <img src="image/image3.jpg" />
+          <img src="image/image4.jpg" />
+        </div>
       </div>
     </div>
   </body>
