@@ -63,7 +63,7 @@ function tryfunc(ele) {
     todo_list.push([todo_list.length, ele.value, false, false]); // id, value, is_checked, is_deleted
     todo_count++;
     refresh_todo_list();
-    event.key = null;
+    ele.value = "";
   }
 }
 
