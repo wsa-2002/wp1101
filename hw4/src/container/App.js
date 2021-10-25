@@ -93,13 +93,13 @@ class todo extends Component {
     for (let index = 0; index < todos.length; index++) {
       if (index === parseInt(i)) {
         temptodos.push({
-          id: todos[i].id,
-          isCompleted: todos[i].isCompleted,
+          id: todos[index].id,
+          isCompleted: todos[index].isCompleted,
           isDeleted: true,
-          content: todos[i].content,
+          content: todos[index].content,
         });
       } else {
-        temptodos.push(todos[i]);
+        temptodos.push(todos[index]);
       }
     }
     this.setState({

@@ -2,40 +2,19 @@ import React, { Component } from "react";
 import item_x from "../img/x.png";
 
 class Todo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selected: false,
-    };
-  }
   render() {
     if (this.props.isDeleted === true) return null;
     if (this.props.filter === "Completed" && this.props.isCompleted === false)
       return null;
     if (this.props.filter === "Active" && this.props.isCompleted === true)
       return null;
-    let h1 = (
-      <h1 className="todo-app__detail" id={this.props.index + "detail"}>
-        {this.props.item}
-      </h1>
-    );
-    if (this.props.isCompleted) {
-      h1 = (
-        <h1
-          className="todo-app__detail checked"
-          id={this.props.index + "detail"}
-        >
-          {this.props.item}
-        </h1>
-      );
-    }
     return (
       <li className="todo-app__item">
         <div className="todo-app__checkbox">
           <input
             id={this.props.index + this.props.item}
             type="checkbox"
-            defaultChecked={this.props.isCompleted || this.state.selected}
+            defaultChecked={this.props.isCompleted}
             onClick={() =>
               this.props.check_box_func(this.props.index, this.props.item)
             }
