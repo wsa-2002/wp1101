@@ -15,21 +15,18 @@ class todo extends Component {
   handleChange = (event) => {
     const { todos } = this.state;
     if (event.key === "Enter" && event.target.value !== "") {
-      this.setState(
-        {
-          todos: [
-            ...todos,
-            {
-              id: this.id,
-              isCompleted: false,
-              isDeleted: false,
-              content: event.target.value,
-            },
-          ],
-          todoText: event.target.value,
-        }
-        // () => console.log(this.state)
-      );
+      this.setState({
+        todos: [
+          ...todos,
+          {
+            id: this.id,
+            isCompleted: false,
+            isDeleted: false,
+            content: event.target.value,
+          },
+        ],
+        todoText: event.target.value,
+      });
       this.id++;
       total_count++;
       all_count++;
