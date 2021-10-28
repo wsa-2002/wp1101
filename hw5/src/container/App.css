@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+input[type="button"] {
+  background-color: black;
+  color: white;
+  /* border: solid black 2px; */
+  width: 100%;
+}
+
+/* input[type="button"]:checked {
+  background-color: white;
+  color: black;
+  width: 100%;
+} */
+
+input[type="text"] {
+  background-color: black;
+  /* border: solid black 2px; */
+  color: white;
+  width: 100%;
+}
+
+span {
+  background-color: black;
+  /* border: solid black 2px; */
+  color: white;
+  width: 100%;
+}
+
+/* .calculator {
+  background: #282c34;
+} */
