@@ -6,7 +6,7 @@ const app = express()
 
 app.use(cors())
 
-app.use('', router)
+app.use(router)
 
 const port = process.env.PORT || 4000
 app.listen(port, () => {

@@ -1,7 +1,13 @@
 import express from 'express'
 import {getNumber, genNumber} from '../core/getNumber'
 const router = express.Router()
-router.get('/start', (_, res) => {
+
+router.get('', (_, res) => {
+  res.status(418).send({msg: 'This is not backend'})
+})
+
+
+router.post('/start', (_, res) => {
   genNumber()
   const number = getNumber()
   console.log(number)
