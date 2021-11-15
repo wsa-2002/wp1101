@@ -29,7 +29,6 @@ function App() {
   }
   const setInputNumber = async () => {
     const res = await setNum(myNum)
-    console.log(res)
     if (!res){
       setStatus('Server not responding, please refresh the page and retry.')
     }
