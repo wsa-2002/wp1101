@@ -54,19 +54,16 @@ const Body = () => {
   };
 
   const handleAdd = async () => {
+    console.log(name, subject, score)
     const {
       data: { message, card },
-    } = await axios.post('/api/create-card', {
-      name,
-      subject,
-      score,
-    });
-
+    } = await axios.post('/api/create-card',  {name, subject, score});
     if (!card) addErrorMessage(message);
     else addCardMessage(message);
   };
 
   const handleQuery = async () => {
+    console.log('run')
     const {
       data: { messages, message },
     } = await axios.get('/api/query-cards', {
@@ -75,7 +72,7 @@ const Body = () => {
         queryString,
       },
     });
-
+    console.log('here', messages)
     if (!messages) addErrorMessage(message);
     else addRegularMessage(...messages);
   };
