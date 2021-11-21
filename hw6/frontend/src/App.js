@@ -73,7 +73,7 @@ function App() {
       <p>Guess a number between 1 to 100</p>
       <input onChange={handleChange}></input>
       <button onClick={handleGuess} disabled={!number || ! hasSet}>guess!</button>
-      <p>{status ? status: 'Note: if you want to guess, you should set your number first'}</p>
+      <p>{status ? status: `Note: if you want to guess, you should set your number first. If confused, please go watch readme :(`}</p>
     </>
   )
   const winningMode = (
