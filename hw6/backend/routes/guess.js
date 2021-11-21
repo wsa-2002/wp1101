@@ -38,10 +38,10 @@ router.get('/guess', (req, res) => {
   }
 })
 
-router.post('/restart', (req, res) => {
+router.post('/restart', (_, res) => {
   genNumber()
   const number = getNumber()
-  console.log(number)
+  console.log('guess number: ' + number)
   res.json({msg: 'The game has restarted'})
 })
 
@@ -51,6 +51,7 @@ router.get('/setNumber', (req, res) => {
     res.status(406).send({msg: 'Not a legal number'})
   }
   else{
+    console.log('Set user number: ' + num)
     setUserNumber(req.query.number)
     res.json({msg: true})
   }

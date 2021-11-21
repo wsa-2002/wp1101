@@ -32,7 +32,13 @@ function App() {
     if (!res){
       setStatus('Server not responding, please refresh the page and retry.')
     }
-    setHasSet(true)
+    else if (res.status === 406){
+      setStatus('Error: "' + myNum + '" is not a valid number (1 - 100)')
+    }
+    else{
+      setHasSet(true)
+      setStatus('Your number ' + myNum + ' has been set.')
+    }
   }
   const handleStart = async () => {
     setHasStarted(true)
