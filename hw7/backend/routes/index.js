@@ -16,7 +16,12 @@ router.get('/api/query-cards', async (req, res) => {
   for (let i = 0; i < data.length; i++){
     ret.push(`(${data[i].name}, ${data[i].subject}, ${data[i].score})`)
   }
-  res.json({messages: ret, message: 'message'})
+  if (ret.length > 0){
+    res.json({messages: ret, message: 'message'})
+  }
+  else {
+    res.json({message:`${type}(${filter}) not found!`})
+  }
 })
 
 router.delete('/api/clear-db', async (req, res) => {
