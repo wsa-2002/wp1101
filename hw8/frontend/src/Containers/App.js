@@ -54,64 +54,62 @@ function App() {
   useEffect(() => {
     displayStatus(status)
   }, [status])
-  if(signedIn)
     return (
       <Wrapper>
-        <Title>
-          <h1>Simple Chat</h1>
-          <Button type="primary" danger onClick={clearMessages}>
-            Clear
-          </Button>
-        </Title>
-        <Message>
-          {messages.length === 0 ? (
-            <p style={{color: '#ccc'}}> No messages...</p>
-          ) : (
-            messages.map(({name, body}, i) => (
-              <p className='App-message' key={i}>
-                <Tag color="blue">{name}</Tag> {body}
-              </p>
-            ))
-          )}
-        </Message>
-        <Input
-          onKeyDown={(e) => {
-            if (e.key === 'Enter'){
-              bodyRef.current.focus()
-            }
-          }}
-          placeholder="Username"
-          style={{ marginBottom: 10 }}
-          value={me}
-          onChange={(e) => setMe(e.target.value)}
-        ></Input>
-        <Input.Search
-          ref={bodyRef}
-          enterButton="Send"
-          placeholder="Type a message here..."
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-          onSearch={(msg) => {
-            if(!msg || !me){
-              displayStatus({
-                type: 'error',
-                msg: 'Please enter a username and a message body'
-              })
-              return
-            }
-            sendMessage({name: me, body: msg})
-            setBody('')
-          }}
-        ></Input.Search>
+        {signedIn? (
+          <>
+            <Title>
+              <h1>Simple Chat</h1>
+              <Button type="primary" danger onClick={clearMessages}>
+                Clear
+              </Button>
+            </Title>
+            <Message>
+              {messages.length === 0 ? (
+                <p style={{color: '#ccc'}}> No messages...</p>
+              ) : (
+                messages.map(({name, body}, i) => (
+                  <p className='App-message' key={i}>
+                    <Tag color="blue">{name}</Tag> {body}
+                  </p>
+                ))
+              )}
+            </Message>
+            <Input
+              onKeyDown={(e) => {
+                if (e.key === 'Enter'){
+                  bodyRef.current.focus()
+                }
+              }}
+              placeholder="Username"
+              style={{ marginBottom: 10 }}
+              value={me}
+              onChange={(e) => setMe(e.target.value)}
+            ></Input>
+            <Input.Search
+              ref={bodyRef}
+              enterButton="Send"
+              placeholder="Type a message here..."
+              value={body}
+              onChange={(e) => setBody(e.target.value)}
+              onSearch={(msg) => {
+                if(!msg || !me){
+                  displayStatus({
+                    type: 'error',
+                    msg: 'Please enter a username and a message body'
+                  })
+                  return
+                }
+                sendMessage({name: me, body: msg})
+                setBody('')
+              }}
+            ></Input.Search>
+          </>)
+        :<SignIn me={me} setMe={setMe} setSignedIn={setSignedIn} displayStatus={displayStatus}/>
+        }
+        
       </Wrapper>
-    )
-  else{
-    return (
-      <Wrapper>
-        <SignIn me={me} setMe={setMe} setSignedIn={setSignedIn} displayStatus={displayStatus}/>
-      </Wrapper>
-    )
-  }
+      )
 }
 
 export default App
