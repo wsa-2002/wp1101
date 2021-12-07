@@ -33,7 +33,7 @@ router.post('/newPost', async (req, res) => {
     res.json({message: "success"})
   }
   else{
-    res.status(403).json({messsage: "error"})
+    res.status(403).json({messsage: "error", post: null})
   }
 })
 // TODO 5-(1): create the 4th API (/api/post)
@@ -43,7 +43,7 @@ router.delete('/post', async (req, res) => {
     res.json({message: "success"})
   }
   else{
-    res.status(403).send({message: "error"})
+    res.status(403).send({message: "error", post: null})
   }
 })
 export default router
