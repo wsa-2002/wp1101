@@ -6,7 +6,7 @@ type Mutation{
 
 type Query{
   users(name: String): [User!]!
-  chatBoxes(name: String): [ChatBox!]
+  chatBoxes(name: String): ChatBox!
   messages: [Message!]
 }
 
@@ -20,8 +20,8 @@ type ChatBoxSubscriptionPayload{
 }
 
 type ChatBox{
-  id: ID!
-  name: String!
+  id: ID
+  name: String
   messages: [Message!]
 }
 

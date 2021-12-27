@@ -4,7 +4,7 @@ const Query = {
     console.log('get chatboxes')
     if (!args.name)
       return db.ChatBoxModel.find()
-    return db.ChatBoxModel.find({name: args.name})
+    return db.ChatBoxModel.findOne({name: args.name})
   },
 
   async users(parent, args, { db }, info){
