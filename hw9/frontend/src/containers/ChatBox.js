@@ -36,11 +36,10 @@ const ChatBox = ({ me, friend, ...props }) => {
         updateQuery: (prev, { subscriptionData }) => {
           if (!subscriptionData.data) return prev;
           const newMessage = subscriptionData.data.chatbox.data
-          console.log('prev', prev.chatBoxes[0].messages[0])
-          console.log('new mes', newMessage)
           return {
             chatBoxes: {
-              messages: [...prev.chatBoxes[0].messages, newMessage],
+              ...prev.chatBoxes,
+              messages: [...prev.chatBoxes.messages, newMessage],
             },
           };
         },
@@ -55,7 +54,7 @@ const ChatBox = ({ me, friend, ...props }) => {
 
   return (
     <Messages>
-      {data && data.chatBoxes[0].messages.map(({ sender: { name }, body }, i) => (
+      {data && data.chatBoxes.messages.map(({ sender: { name }, body }, i) => (
         <Message me={me} name={name} body={body} key={name + body + i} />
       ))}
       <div ref={messageFooter} />
