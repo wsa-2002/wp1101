@@ -1,0 +1,7 @@
+{
+  "scripts": {
+  "frontend": "cd ./frontend && npm start",
+  "backend": "cd ./backend && npm start",
+  "test": "npx cypress run --browser=firefox --spec cypress/integration/*.spec.js"
+  }
+}
